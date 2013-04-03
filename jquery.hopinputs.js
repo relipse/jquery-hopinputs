@@ -5,8 +5,6 @@
  * Usage $(form.ssn1).hopinputs({hopLength: 3, hopToInput: form.ssn2}); 
  *  or $(form.ssn1).hopinputs({hopLength: 3);
  *  or $(form.ssn1).hopinputs();  //maxlength of ssn1 is 3
- *
- * http://www.opensource.org/licenses/mit-license.php
  */
 (function ($) {
     jQuery.fn.hopinputs = function(opts){ 
