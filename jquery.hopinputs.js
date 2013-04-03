@@ -24,8 +24,8 @@
              hoplen = opts.hopLength;   
           }
           if (!hoplen){
-             console.log('opts.hopLength or maxlength attribute are not defined');
-             return false;
+             //console.log('opts.hopLength or maxlength attribute are not defined');
+             return $(this);
           }
           
           if (opts.hopToInput == 'NEXT_INPUT'){
@@ -36,10 +36,17 @@
           
           $(this).keyup(function(){
              if ($(this).val().length >= hoplen){
-                hopipt.focus();
-                //hopipt.select();
+                
+                if (hopipt.length == 1){
+                   hopipt.focus();
+                   //hopipt.select();
+                }else{
+                   $(this).blur(); //invalid input to hop to, just blur
+                }
              }
           });
        });
+       
+       return $(this);
     }
 })(jQuery);
